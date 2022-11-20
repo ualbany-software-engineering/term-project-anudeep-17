@@ -2,7 +2,7 @@
 # Use a Node 16 base image
 FROM node:16-alpine 
 # Set the working directory to /app inside the container
-WORKDIR /app
+WORKDIR /server
 # Copy app files
 COPY package*.json ./
 # ==== BUILD =====

@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  client:
+    build: 
+      context: ./client
+      dockerfile: Dockerfile
+  
+  server:
+    build: 
+      context: ./server
+      dockerfile: Dockerfile
+    restart: always
+  
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
+
