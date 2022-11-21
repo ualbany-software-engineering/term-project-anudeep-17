@@ -3,6 +3,7 @@ import './App.css';
 import { Login } from './login/login';
 import Nav from './nav/nav';
 import { useLocation, BrowserRouter, Routes, Route } from "react-router-dom";
+import { Profiles } from './profiles/profiles';
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
     <Nav />
     <BrowserRouter>
       <Routes>
-        <Route index element={<Login />} />
+        <Route index element={<Profiles/>} />
+        <Route path="/Login" element = {<Login/>}/>
       </Routes>
     </BrowserRouter></>
   );
