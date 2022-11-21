@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./login.css";
 // import { useNavigate } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
-
-
+import Axios from "axios";
+import {useNavigate} from "react-router-dom"
 
 export const Login = () => {
 
@@ -11,7 +11,18 @@ export const Login = () => {
     const [password, setPassword] = useState("")
     // const navigate = useNavigate();
     const [activeclass, setActiveclass] = useState(false);
-  
+    const [status, setStatus] = useState("");
+    let navigate = useNavigate();
+
+const onclicker =() =>{
+      alert("login successful");
+      navigate("/");
+}
+const onregister =() =>{
+    alert("registration successful");
+    navigate("/");
+}
+
   return (
     <div className='loginsection'>
     <div className='loginbody'>   
@@ -34,7 +45,7 @@ export const Login = () => {
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
                     </div>
-                    <button type="submit" class="btn btn-primary">Create Account</button>
+                    <button type="submit" class="btn btn-primary" onClick = {onregister}>Create Account</button>
                 </form>
                 </form>
             </div>
@@ -52,7 +63,7 @@ export const Login = () => {
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
                     </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-primary" onClick={onclicker}>Login</button>
                 </form>
                 </form>
             </div>
