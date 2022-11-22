@@ -12,6 +12,7 @@ export default function Nav() {
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="/">Home</a>
+        <a class="nav-link" href="/edit">Editpost</a>
         <a class="nav-link" href="/login">login</a>
       </div>
     </div>

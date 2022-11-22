@@ -7,13 +7,14 @@ export const DisplayHome = ({photo, name, description}) =>{
     <div class="container">
     <div class="row">
         <div class="col-sm">
-            <img class="rounded float-left" src={photo} width="300px" height="300px" />
+            <img class="rounded float-left" src={photo} width="350px" height="300px" />
         </div>
         <div class="col-sm">
             <h1>{name}</h1>
             <p>{description}</p>
         </div>
     </div>
+    <br/>
     </div>
     </>
   )

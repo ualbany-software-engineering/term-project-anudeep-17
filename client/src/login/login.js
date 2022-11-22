@@ -16,11 +16,11 @@ export const Login = () => {
 
 const onclicker =() =>{
       alert("login successful");
-      navigate("/");
+      navigate("/add");
 }
 const onregister =() =>{
     alert("registration successful");
-    navigate("/");
+    navigate("/add");
 }
 
   return (
