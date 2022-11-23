@@ -5,7 +5,7 @@ const userModel=require('./models/profiles')
 const User=require('./models/users')
 const cors=require('cors')
 const AuthRoute = require("./auth")
-
+const mongoid = require('mongodb').ObjectId;
 
 app.use(express.json());
 app.use(cors());
@@ -31,6 +31,19 @@ app.post("/createuser", async (req,res)=>{
 });
 
 app.use("/auth", AuthRoute) 
+
+app.post("/edit", (req, res) =>{
+    const user = req.body
+    const id = user._id
+    db.collection("userprofiles").updateOne({"_id":mongoid(id)}, {$set:item}, function(err, result){
+        if(err)
+        {
+            res.json(err)
+        }
+    })
+} )
+
+
 
 
 app.listen(3005, ()=>{
