@@ -2,23 +2,28 @@ const User = require("./models/users");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-const register = (req, res, next) =>{
-    bcrypt.hash(req.body.password, 10, function(err, hashedpass){
+const register = async(req, res, next) =>{
+    bcrypt.hash(req.body.password, 10, async function(err, hashedpass){
         if(err) {
+            console.log("error occured")
             res.json({error:err})
         }
-        let user = new User({
+
+        const user = new User({
             username: req.body.username,
             password: hashedpass,
         })
     
-        user.save()
+        console.log(user)
+        Account.create(user)
         .then(user => {
+            console.log(user);
             res.json({
                 message: 'user registered successfully'
             })
         })
         .catch(error => {
+            console.log("save error occured")
             res.json({
                 message: error
             })
@@ -38,7 +43,7 @@ const login = (req,res,next) =>{
             bcrypt.compare(userpassword, user.password, function(err, result){
                 if(err)
                 {
-                    res.json({message: "wrong password"})
+                    res.json({message: err})
                 }
                 if(result)
                 {

@@ -5,7 +5,6 @@ import {useNavigate} from "react-router-dom";
 import "./profile.css";
 
 export const Profiles = () => {
-
    const [listOfUsers, setListOfUsers] = useState([]);
   const navigate = useNavigate();
 

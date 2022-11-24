@@ -15,12 +15,16 @@ export const Login = () => {
     let navigate = useNavigate();
 
 const onclicker =() =>{
-      alert("login successful");
-      navigate("/add");
+    Axios.post("http://localhost:3005/auth/login", {username: email, password: password}).then((response) => {
+        alert(response.data);
+        navigate("/add");
+    });
 }
 const onregister =() =>{
-    alert("registration successful");
-    navigate("/add");
+    Axios.post("http://localhost:3005/auth/register", {username: email, password: password}).then((response) => {
+        alert(response.data);
+        navigate("/add");
+    });
 }
 
   return (

@@ -34,11 +34,7 @@ app.post("/createuser", async (req,res)=>{
 app.use("/auth", AuthRoute) 
 
 app.post("/edit", async (req, res) =>{
-    var record = {
-        photo : req.body.photo,
-        name: req.body.name,
-        description: req.body.description
-    }
+    var record = req.body;
     console.log(record);
     const user = req.body
     let data = await userModel.findById(mongoid(user._id)); 
