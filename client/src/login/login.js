@@ -16,15 +16,15 @@ export const Login = () => {
 
 const onclicker =() =>{
     Axios.post("http://localhost:3005/auth/login", {username: email, password: password}).then((response) => {
-        alert(response.data);
+        alert(response.data.message);
         navigate("/add");
     });
 }
-const onregister =() =>{
+const onregister =(event) =>{
     Axios.post("http://localhost:3005/auth/register", {username: email, password: password}).then((response) => {
-        alert(response.data);
         navigate("/add");
     });
+    event.preventDefault()
 }
 
   return (

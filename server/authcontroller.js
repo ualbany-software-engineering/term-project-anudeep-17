@@ -9,26 +9,21 @@ const register = async(req, res, next) =>{
             res.json({error:err})
         }
 
-        const user = new User({
+    let user = await User.findOne({ username: req.body.username })
+    if (user) {
+        return res.status(400).send('That user already exisits!');
+    } else {
+        // Insert the new user if they do not exist yet
+        console.log(req.body.username);
+        user = new User({
             username: req.body.username,
-            password: hashedpass,
-        })
-    
-        console.log(user)
-        Account.create(user)
-        .then(user => {
-            console.log(user);
-            res.json({
-                message: 'user registered successfully'
-            })
-        })
-        .catch(error => {
-            console.log("save error occured")
-            res.json({
-                message: error
-            })
-        })
-    })
+            password: hashedpass
+        });
+        await user.save();
+        console.log(user);
+        res.json({message: "succesfully registered"});
+    }
+    });
 }
 
 
