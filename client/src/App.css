@@ -1,0 +1,66 @@
+.profiles
+{
+    background-image: url("../images/bg_518.png");
+}
+
+.pro
+{
+    background: rgba( 255, 255, 255, 0 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding-top: 10px;
+}
+
+.profile
+{
+    /* background: rgba( 0, 0, 0, 0.55 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+    color: white;
+}
+
+.profile>img
+{
+    image-rendering: optimizeQuality optimizeSpeed;
+}
+
+.bgset1
+{
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bgset2
+{
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bgset1>h5
+{
+    font: xx-small;
+    letter-spacing: 5px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.bgset2>h1
+{
+    font-size: 100px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+

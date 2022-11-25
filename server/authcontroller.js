@@ -6,12 +6,12 @@ const register = async(req, res, next) =>{
     bcrypt.hash(req.body.password, 10, async function(err, hashedpass){
         if(err) {
             console.log("error occured")
-            res.json({error:err})
+            res.json({message:err})
         }
 
     let user = await User.findOne({ username: req.body.username })
     if (user) {
-        return res.status(400).send('That user already exisits!');
+        return res.status(400).json({message:'That user already exisits!'});
     } else {
         // Insert the new user if they do not exist yet
         console.log(req.body.username);

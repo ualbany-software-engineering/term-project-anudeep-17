@@ -14,15 +14,17 @@ export const Login = () => {
     const [status, setStatus] = useState("");
     let navigate = useNavigate();
 
-const onclicker =() =>{
+const onclicker =(event) =>{
     Axios.post("http://localhost:3005/auth/login", {username: email, password: password}).then((response) => {
         alert(response.data.message);
-        navigate("/add");
+        navigate("/add",{state:{loggedin : true}});
     });
+    event.preventDefault()
 }
 const onregister =(event) =>{
     Axios.post("http://localhost:3005/auth/register", {username: email, password: password}).then((response) => {
-        navigate("/add");
+        alert(response.data.message);
+        navigate("/add", {state:{loggedin : true}});
     });
     event.preventDefault()
 }
