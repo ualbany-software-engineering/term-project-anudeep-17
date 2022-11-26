@@ -17,6 +17,7 @@ export const Login = () => {
 const onclicker =(event) =>{
     Axios.post("http://localhost:3005/auth/login", {username: email, password: password}).then((response) => {
         alert(response.data.message);
+        localStorage.setItem("username", JSON.stringify(email));
         navigate("/add",{state:{loggedin : true}});
     });
     event.preventDefault()
@@ -24,7 +25,8 @@ const onclicker =(event) =>{
 const onregister =(event) =>{
     Axios.post("http://localhost:3005/auth/register", {username: email, password: password}).then((response) => {
         alert(response.data.message);
-        navigate("/add", {state:{loggedin : true}});
+        localStorage.setItem("username", JSON.stringify(email));
+        navigate("/add", {state:{loggedin : true, username: email}});
     });
     event.preventDefault()
 }

@@ -9,26 +9,29 @@ export const Addpost = () => {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const navigate = useNavigate();
-  
+    const location = useLocation();
+    var username = location.state.username;
+    
     const addUser = () => {
         Axios.post("http://localhost:3005/createuser", {
           photo,
           name,
           description,
+          username
         }).then((response) => {
           setListOfUsers([
             ...listOfUsers,
             {
               photo,
               name,
-             description
+              description,
             },
           ]);
+          navigate("/")
         });
-        navigate("/")
       };
 
-      const location = useLocation();
+
       var check = false;
 
      
@@ -58,14 +61,16 @@ export const Addpost = () => {
     else
     {
       return (
-        <div className='container form'> <>
+        <div className='editor profiles'>
+        <div className='container form pro profile'> <>
         <h1>Add New Posts to Profile</h1>
-        <input type="text" placeholder="Photo...." onChange={(e) => setPhoto(e.target.value) }/>
-        <input type="text" placeholder="Name...." onChange={(e) => setName(e.target.value) }/>
-        <input type="text" placeholder="Desc...." onChange={(e) => setDescription(e.target.value) }/>
+        <input type="text" placeholder="Photo...." className="form-control" onChange={(e) => setPhoto(e.target.value) }/>
+        <input type="text" placeholder="Name...." className="form-control" onChange={(e) => setName(e.target.value) }/>
+        <input type="text" placeholder="Desc...." className="form-control" onChange={(e) => setDescription(e.target.value) }/>
     
         <button className='btn btn-primary' onClick = {addUser}>Add post</button>
         </>
+        </div>
         </div>
       )
   
