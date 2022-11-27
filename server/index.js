@@ -24,7 +24,7 @@ userModel.find({}, (err,result)=>{
 });
 
 app.post("/createuser", async (req,res)=>{
-    const user = req.body
+    const user = req.body;
     const newuser=new userModel(user);
     await newuser.save();
     res.json(user);
