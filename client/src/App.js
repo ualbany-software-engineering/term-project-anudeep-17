@@ -10,13 +10,14 @@ import { Editprofile } from './profiles/editprofile';
 function App() {
   return (
     <>
-    <Nav />
+    
     <BrowserRouter>
+      <Nav />
       <Routes>
         <Route index element={<Profiles/>} />
-        <Route path="/Login" element = {<Login/>}/>
-        <Route path="/add" element = {<Addpost/>}/>
-        <Route path="/edit" element = {<Editprofile/>}/>
+        <Route path="/Login" exact element = {<Login/>}/>
+        <Route path="/add" exact element = {<Addpost/>}/>
+        <Route path="/edit" exact element = {<Editprofile/>}/>
       </Routes>
     </BrowserRouter></>
   );

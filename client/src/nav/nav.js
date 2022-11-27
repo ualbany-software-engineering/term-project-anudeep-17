@@ -1,5 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
+import { Link } from 'react-router-dom';
 
 export default function Nav() {
   const user = localStorage.getItem("username");
@@ -16,8 +17,8 @@ export default function Nav() {
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-              <a class="nav-link" href="/login">login</a>
+              <Link  to={"/"} class="nav-link active">Home</Link>
+              <Link to={"/login"} class="nav-link" >login</Link>
             </div>
           </div>
         </div>
@@ -35,8 +36,8 @@ export default function Nav() {
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-              <a class="nav-link" href="/edit">Editpost</a>
+              <Link  to={"/"} class="nav-link active">Home</Link>
+              <Link to={"/edit"} class="nav-link">Editpost</Link>
               {/* <a class="nav-link" href="/login">login</a> */}
             </div>
           </div>
