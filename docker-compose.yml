@@ -6,7 +6,7 @@ services:
     build: 
       context: ./client
       dockerfile: Dockerfile
-  
+ 
   server:
     build: 
       context: ./server
