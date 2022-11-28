@@ -20,17 +20,17 @@ services:
     volumes:
       - mongo-data:/data/db
 
-  # caddy:
-  #   image: caddy:2.6.2-alpine
-  #   restart: unless-stopped
-  #   ports:
-  #     - "80:80"
-  #     - "443:443"
-  #   volumes:
-  #     - ./Caddyfile:/etc/caddy/Caddyfile
-  #     - ./site:/srv
-  #     - caddy_data:/data
-  #     - caddy_config:/config
+  caddy:
+    image: caddy:2.6.2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./site:/srv
+      - caddy_data:/data
+      - caddy_config:/config
 
 volumes:
   mongo-data:
