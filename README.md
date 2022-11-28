@@ -10,8 +10,18 @@ The link to website hosted: <a href ="http://44.202.145.129:3000/">518 assignmen
 4. Hosting service: AWS EC2 <br/>
 5. IDE: VSCode, AWS console <br/>
 6. VSC: Github <br/>
+7. Reverse proxy: Caddy <br/>
+8. Containarize: Docker <br/>
   
 ---
+# Development process:
+Step-1: building the client side of the website
+Step-2: server side of the website to get the data.
+Step-3: integration of ui and express js.
+---
+# Docker process:
+Step1: after installing docker, have a docker file with commands according to the server and client.
+Step2: refer the code block of docker to build and run commands in docker.
 --- 
 # Code blocks 
 1. React app
@@ -63,4 +73,22 @@ The link to website hosted: <a href ="http://44.202.145.129:3000/">518 assignmen
     pm2 stop all // to stop all the instances.
   
   //
+ ```
+3. Docker
+```
+    //assuming that docker deskop is installed and completed setup.
+    
+    //for client
+    docker build -t client . 
+    docker run -p 3000:3000 client
+    
+    //for server
+    docker build -t server . 
+    docker run -p 3005:3005 server
+    
+    //for mongo -- after installing mongodb in nodejs
+    docker run -p 27017:27017 -v ~/db:/data/db mongo:latest
+   
+```
 ---
+Thank you @ninandpchaudari for you his resources and help.
