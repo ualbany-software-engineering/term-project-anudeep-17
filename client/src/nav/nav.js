@@ -8,6 +8,7 @@ export default function Nav() {
 
   if(username === null)
   {
+    console.log("loggedin");
     return (
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
