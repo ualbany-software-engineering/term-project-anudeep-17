@@ -35,5 +35,4 @@ services:
 volumes:
   mongo-data:
   caddy_data:
-    external: true
   caddy_config:
