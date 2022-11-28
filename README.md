@@ -15,13 +15,13 @@ The link to website hosted: <a href ="http://44.202.145.129:3000/">518 assignmen
   
 ---
 # Development process:
-Step-1: building the client side of the website
-Step-2: server side of the website to get the data.
-Step-3: integration of ui and express js.
+Step-1: building the client side of the website <br/>
+Step-2: server side of the website to get the data. <br/>
+Step-3: integration of ui and express js. <br/>
 ---
 # Docker process:
-Step1: after installing docker, have a docker file with commands according to the server and client.
-Step2: refer the code block of docker to build and run commands in docker.
+Step1: after installing docker, have a docker file with commands according to the server and client. <br/>
+Step2: refer the code block of docker to build and run commands in docker. <br/>
 --- 
 # Code blocks 
 1. React app
