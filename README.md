@@ -94,4 +94,4 @@ The link to website hosted: <a href ="http://44.202.145.129:3000/">518 assignmen
    
 ```
 ---
-Thank you @ninandpchaudari for you his resources and help.
+Thank you @ninadpchaudhari for you his resources and help.
