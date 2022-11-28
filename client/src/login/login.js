@@ -23,7 +23,7 @@ const onclicker =(event) =>{
     event.preventDefault()
 }
 const onregister =(event) =>{
-    Axios.post("http://localhost:3005/auth/register", {username: email, password: password}).then((response) => {
+    Axios.post("http://44.202.145.129:3005/auth/register", {username: email, password: password}).then((response) => {
         alert(response.data.message);
         localStorage.setItem("username", JSON.stringify(email));
         navigate("/add", {state:{loggedin : true, username: email}});
