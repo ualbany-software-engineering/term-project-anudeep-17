@@ -14,7 +14,7 @@ export const Editprofile = () => {
     var username = JSON.parse(user);
 
     const edituser = () => {
-        Axios.post("http://localhost:3005/edit", {_id,photo, name, description, username}).then((response) => {
+        Axios.post("http://44.202.145.129:3005/edit", {_id,photo, name, description, username}).then((response) => {
             console.log("edited")
         });
         navigate("/")
@@ -32,7 +32,7 @@ export const Editprofile = () => {
 
       useEffect(() => {
         
-        Axios.get("http://localhost:3005/getprofile").then((response) => {
+        Axios.get("http://44.202.145.129:3005/getprofile").then((response) => {
           for(let i = 0; i< response.data.length;i++)
           {
             if(response.data[i].username.includes(username))

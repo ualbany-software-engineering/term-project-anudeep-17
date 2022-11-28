@@ -13,7 +13,7 @@ export const Addpost = () => {
     var username = location.state.username;
     
     const addUser = () => {
-        Axios.post("http://localhost:3005/createuser", {
+        Axios.post("http://44.202.145.129:3005/createuser", {
           photo,
           name,
           description,

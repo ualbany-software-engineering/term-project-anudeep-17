@@ -9,7 +9,7 @@ export const Profiles = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    Axios.get("http://localhost:3005/getprofile").then((response) => {
+    Axios.get("http://44.202.145.129:3005/getprofile").then((response) => {
       setListOfUsers(response.data);
     });
   }, []);
