@@ -19,5 +19,17 @@ services:
     volumes:
       - mongo-data:/data/db
 
+  caddy:
+    image: caddy:2.6.2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+
 volumes:
   mongo-data:
+  caddy_data:
+  caddy_config:
