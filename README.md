@@ -75,7 +75,6 @@ The link to website hosted: <a href ="http://44.202.145.129:3000/">518 assignmen
  
     pm2 stop all // to stop all the instances.
   
-  //
  ```
 3. Docker
 ```
